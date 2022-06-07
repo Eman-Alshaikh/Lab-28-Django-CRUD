@@ -1,1 +1,2 @@
-# Lab-28-Django-CRUD
+# Lab 28: Django-CRUD
+
