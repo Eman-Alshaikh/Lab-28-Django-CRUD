@@ -1,5 +1,6 @@
 from audioop import reverse
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import Snack
 from django.views.generic import (
 
@@ -42,7 +43,7 @@ associated url path is create/
 
     template_name="snack_create.html"
     model=Snack
-    fields= ["title","purchaser","description"]
+    fields= ["title" ,"description","purchaser"]
 
 
 class SnackUpdateView (UpdateView):
@@ -52,7 +53,7 @@ associated url path is <int:pk>/update/
     """
     template_name="snack_update.html"
     model=Snack
-    fields= ["title" ,"description"]
+    fields= ["title" ,"description","purchaser"]
 
 
 
@@ -64,4 +65,4 @@ associated url path is <int:pk>/delete/
     """
     template_name="snack_delete.html"
     model=Snack
-    success_url= '/'
+    success_url= reverse_lazy('snack_list')
